@@ -1,0 +1,484 @@
+{
+	"info": {
+		"_postman_id": "0dd65018-d3e1-4f3d-b724-417aa0b2c3aa",
+		"name": "troylab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@admin.com\",\n    \"password\": \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}login",
+							"host": [
+								"{{local_url}}login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schools",
+			"item": [
+				{
+					"name": "List All Schools",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}schools",
+							"host": [
+								"{{local_url}}schools"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store New School",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"admin@admin.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}schools",
+							"host": [
+								"{{local_url}}schools"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get School By ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_url}}schools/1",
+							"host": [
+								"{{local_url}}schools"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update School By ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "BIS1",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}schools/1",
+							"host": [
+								"{{local_url}}schools"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete School By ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}schools/1",
+							"host": [
+								"{{local_url}}schools"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "List All Students",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}students",
+							"host": [
+								"{{local_url}}students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store New Student",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ahmed",
+									"type": "text"
+								},
+								{
+									"key": "school_id",
+									"value": "2",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}students",
+							"host": [
+								"{{local_url}}students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Student By ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{local_url}}students/35",
+							"host": [
+								"{{local_url}}students"
+							],
+							"path": [
+								"35"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Student By ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Ashbal",
+									"type": "text"
+								},
+								{
+									"key": "school_id",
+									"value": "10",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}students/35",
+							"host": [
+								"{{local_url}}students"
+							],
+							"path": [
+								"35"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Student By ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}students/1",
+							"host": [
+								"{{local_url}}students"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Logged In User Info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@admin.com\",\n    \"password\": \"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_url}}info",
+					"host": [
+						"{{local_url}}info"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMGU4YjgzZjg4MGI1YmM5MDc1OTNjNDRiZDc2ZTVhM2I5MjVhNGI2MGVjMzZmOGI2YmRiZWZkNDZiNGFmNGQ1ODM2YTZmNGE4YTM1YjkxZjgiLCJpYXQiOjE2NDc4NzI5NDkuNTM3NDAxLCJuYmYiOjE2NDc4NzI5NDkuNTM3NDA1LCJleHAiOjE2Nzk0MDg5NDkuNTMxMDkxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.GhzwOqRqrI8Ys5dVdzPxz4Xb_wxPD2qZl4lc9Uxe7pJ0YSS5tgYgbB7uafyVnPd9CBRd8opyMpEJO3wV2HQyi-RV6nenjABaYXPM1LgJ-YQfHegVknEPGOr5GPI5BzNQM6HrOQMUjhAorQc-Zz0-iXS-WNtaww9iTDRhpn9wstVyJd_u_lOZ9KfYCrElKLxXreAVpwwVX5UNvhT9_e9CgJTRD8V9QtR27vnEhexVKW6KItc2SWbOeIJjkbQSb6hdsGf5GXbyLwu_WjEzfNhsnYucCZWY0Qp2IC8Xxc0_RDAi0f4LOpJXb2GUexQaax-dG_tHXb1y8C7OyqbA2ng_e-D9hqYPA-L_gTJY9M6VIiYKc1N1KBThpAnwkEEmEZZl81hx_Jt7IoLh7CBF_h08RVkhzox2M04QQS1WGczmf1IJp6gd82VfePZ-UaRVc-R7F-wdGXvDfP3srWeTqAsHy2Mx3UMSKKiIbNcZw3Pim4eJBPy_GlOh5Gv-zhz3hC7JEgCvytiN6G9bi14qj95vxPv438eYtqxkmKT-UsRTt_TzInVAgDX3lS_2MUNQzC86xHIScV3SLzqSrjpJ0-Mh8OYojpvZN7QrjpmdT_DuHhqPo_Lze6D5rp_w2w8t2JZ963nJFZ6AnuCyQ9XH6Qpn_BO33ZyrgR-QTvLaUSVxpFE"
+		},
+		{
+			"key": "local_url",
+			"value": "http://localhost/troylab/public/api/"
+		}
+	]
+}
