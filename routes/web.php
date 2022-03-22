@@ -11,11 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
+Route::get('/', 'Auth\LoginController@login');
 Route::get('/login', 'Auth\LoginController@login');
 Route::post('/login', 'Auth\LoginController@adminLogin')->name('login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
